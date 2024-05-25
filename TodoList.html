@@ -1,0 +1,81 @@
+<html>
+    <head>
+        <script>
+
+            function f1(X){
+                var textnode = document.getElementById("textTask");
+                var labelnode = document.getElementById("labelTask");
+                var submitnode = document.getElementById("submitTask");
+                var editnode = document.getElementById("editTask");
+
+                if (X == 'submit') {
+                   // console.log("Test the submit Button");
+                var textvalue = textnode.value;
+                
+
+                   if (textvalue) {
+                    var confirmNO = window.confirm("Are sure , You want to Submit your Name :-  " + textvalue);
+                   
+                        if (confirmNO === true ) {
+                            //console.log("Test case of Condition");
+                            if (isNaN(textvalue)) {
+                               // console.log("Numbbb");
+                                 labelnode.innerHTML = textvalue;
+                                 submitnode.value = "EDIT";
+                                 editnode.style.display = "block";
+                                 textnode.value = "";
+                                 
+                            }else{ window.alert("Please don't add NUMBERS!");}
+                      
+                        }
+                        
+                   }else{
+                    window.alert("Please Submit your Name!");
+                   }
+                
+                
+                }
+                if (X == 'edit') {
+                    //console.log("Test the Edit Button");
+                var textvalue = textnode.value;
+                textnode.value = labelnode.innerHTML;
+
+                }
+                if (X == 'delete') {
+
+                var confirmNO = window.confirm("Are sure , You want to Delete your details :-  " + labelnode.innerHTML);
+
+                if (confirmNO) {
+
+                    labelnode.innerHTML = "";
+                    submitnode.value = 'Submit';
+                    editnode.style.display = "none";
+                    textnode.value = "";
+                }
+               
+                }
+              
+
+            }
+           
+        </script>
+    </head>
+    <body>
+        <h1>To do List</h1>
+        <h3>Add Items</h3>
+
+        <input type="text" id="textTask"><br><br>
+        <input type="button" value="Submit"  id="submitTask" onclick="f1('submit')"><br><br>
+        
+
+        <h3>Tasks</h3> 
+        <label>Your Answer is:-</label>
+        <label id ="labelTask"  style="display: inline;"></label><br>
+       
+        <input type="button" value="Delete" onclick="f1('delete')"  style="display: inline;">
+        <input type="button" value="Edit" style="display: none " id="editTask" onclick="f1('edit')">
+
+    
+
+    </body>
+</html>
