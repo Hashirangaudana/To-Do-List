@@ -1,34 +1,38 @@
 <html>
-  <head>
-    <style>
-      #btnOK,
-      #dltbtn2 {
-        display: none;
-      }
-    </style>
 
-    
-  </head>
+<head>
+  <title>To do list</title>
+  <link rel="stylesheet" href="ToDoListV2.css" />
 
-  <body>
-    <h1>Todo List</h1>
+  <style></style>
+</head>
 
-    <label>Add Item</label><br /><br />
+<body>
+  <div class="appform">
+    <h1>⏰Todo List</h1>
+    <br />
+    <div class="itmform">
+      <h3>🖋️Add item</h3>
 
-    <input type="text" id="litm" />
-    <input id="sbbtn" type="button" value="Submit" onclick="sub()" />
-    <input id="btnOK" type="button" value="ok" onclick="okbtn()" />
-    <br /><br />
+      <input type="text" id="litm" placeholder="add task..." />
+      <input id="sbbtn" type="button" value="Submit" onclick="addItem()" />
+      <input id="btnOK" type="button" value="ok" onclick="editDoneItem()" />
+      <br /><br />
+      <div class="tb">
+        <table id="tbl"></table>
+      </div>
+      <hr />
+      <div class="all">
+        <h2>Completed Task</h2>
 
-    <table id="tbl"></table>
+        <div class="tb">
+          <table id="tbl2"></table>
+        </div>
+        <input id="dltbtn2" type="button" value="delete all" onclick="dltAllItem()" />
+      </div>
+    </div>
+  </div>
+  <script src="ToDoListV2.js"></script>
+</body>
 
-    <hr />
-
-    <h2>Complete Task</h2>
-
-    <table id="tbl2"></table>
-
-    <input id="dltbtn2" type="button" value="Delete All" onclick="dltAll()" />
-    <script src="ToDoListV2.js"></script>
-  </body>
 </html>

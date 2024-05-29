@@ -1,0 +1,204 @@
+* {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+}
+
+h1 {
+    text-transform: uppercase;
+    text-align: center;
+
+}
+
+body {
+    background-image: url(./bg.jpg);
+    background-size: cover;
+    max-width: fit-content;
+}
+
+h3 {
+    text-transform: uppercase;
+    font-family: "Reddit Mono", monospace;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-style: normal;
+    color: purple;
+    text-align: left;
+}
+
+.appform {
+
+    margin-top: 110px;
+    margin-left: 380px;
+    width: 500px;
+    height: 600px;
+    align-items: center;
+
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(3.8px);
+    -webkit-backdrop-filter: blur(3.8px);
+    border: 1px solid rgba(255, 255, 255, 0.51);
+}
+
+#litm {
+    border: 0;
+    outline: 0;
+    width: 330px;
+    height: 4px;
+    padding: 20px;
+    border-radius: 18px;
+    background-color: #daf0d0;
+    margin-left: 20px;
+}
+
+#sbbtn {
+    border: 2px solid #daf0d0;
+    width: 70px;
+    height: 35px;
+    color: white;
+    border-radius: 30px;
+    background-color: #008000;
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+.itmform {
+    margin-left: 25px;
+    width: 450px;
+    height: 410px;
+}
+
+hr {
+    margin-top: 5px;
+    border: 0;
+    outline: 0;
+    width: 450px;
+    height: 2px;
+    background-color: #004B23;
+}
+
+h2 {
+    text-transform: uppercase;
+    font-family: "Reddit Mono", monospace;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-style: normal;
+    color: purple;
+    text-align: left;
+}
+
+#btnOK {
+    border: 2px solid #daf0d0;
+    width: 70px;
+    height: 35px;
+    color: white;
+    border-radius: 30px;
+    background-color: #008000;
+    margin-left: 5px;
+    display: none;
+    transition-duration: 0.2s;
+}
+
+#dltbtn2 {
+    position: fixed;
+    border: 2px solid #daf0d0;
+    width: 100px;
+    height: 35px;
+    color: white;
+    display: none;
+    border-radius: 35px;
+    margin-left: 330px;
+    margin-top: 15px;
+    background-color: #008000;
+}
+
+.tb {
+    overflow: auto;
+    height: 140px;
+    width: 410px;
+    margin-left: 20px;
+    margin-top: 12px;
+    display: block;
+}
+
+table {
+    width: 100%;
+    outline: 0;
+    border-collapse: separate;
+    border-spacing: 0 10px;
+}
+
+tr {
+
+    padding: 15px;
+    text-align: center;
+    background-color: #13ac5a;
+}
+
+#tbl2 {
+    text-decoration: line-through;
+}
+
+.edit {
+
+    border: 2px solid #daf0d0;
+    border-radius: 25px;
+    width: 55px;
+    padding: 5px;
+    background-color: #e1f150;
+    transition-duration: 0.5s;
+}
+
+.delete {
+    border: 2px solid #daf0d0;
+    color: #470404;
+    border-radius: 25px;
+    width: 65px;
+    padding: 5px;
+    background-color: hotpink;
+    /* background-color:rgba(137, 28, 117, 0.803); */
+}
+
+.checkbox {
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background-color: #eee;
+}
+
+.edit:hover {
+    border: 2px solid white;
+    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+    background-color: hotpink;
+    color: white;
+}
+
+#btnOK:hover {
+    border: 2px solid white;
+    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+    background-color: #023a3a;
+    color: white;
+}
+
+.delete:hover {
+    border: 2px solid white;
+    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+    background-color: #d1160de2;
+    color: white;
+}
+
+#sbbtn:hover {
+    border: 2px solid white;
+    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+    background-color: #023a3a;
+    color: white;
+}
+
+#dltbtn2:hover {
+    border: 2px solid white;
+    background-color: #d1160de2;
+    color: white;
+    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}

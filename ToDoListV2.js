@@ -1,6 +1,7 @@
 var el;
+//const audio = new Audio('sound.mp3');
 
-function sub() {
+function addItem() {
   //console.log("111");
 
   var itm = litm.value;
@@ -8,123 +9,149 @@ function sub() {
 
   if (itm != "") {
     //console.log("111");
+    if (isNaN(itm)) {
+      t1 = document.createTextNode(itm);
 
-    t1 = document.createTextNode(itm);
+      chk = document.createElement("input");
+      edt = document.createElement("input");
 
-    chk = document.createElement("input");
-    edt = document.createElement("input");
+      chk.setAttribute("type", "checkbox");
+      chk.setAttribute("class", "checkbox");
+      chk.addEventListener("click", function () {
+        var confirmNO4 = window.confirm(
+          "Are sure , You want to COMPLETE your Task ? :-  " +
+            this.parentNode.nextSibling.innerHTML
+        );
 
-    chk.setAttribute("type", "checkbox");
-    chk.addEventListener("click", function () {
-      var x = this.parentNode;
-      //console.log(x);
-      //console.log(x.parentNode);
+        var z = "";
+        if (confirmNO4) {
+          var x = this.parentNode;
+          //console.log(x);
+          //console.log(x.parentNode);
 
-      var y = x.parentNode.firstChild;
-      //console.log(y);
-      //console.log(y.innerHTML);
+          var y = x.nextSibling;
+          //console.log(y);
+          //console.log(y.innerHTML);
 
-      z = document.createTextNode(y.innerHTML);
+          z = document.createTextNode(y.innerHTML);
 
-      del = document.createElement("input");
-      del.setAttribute("type", "button");
-      del.setAttribute("value", "delete");
-      del.addEventListener("click", function () {
-        tbl2.removeChild(this.parentNode.parentNode);
-        console.log(tbl2.innerHTML);
+          //edt = document.createElement("input");
 
-        var tblnode2 = tbl2.innerHTML;
-        console.log(tblnode2);
+          del = document.createElement("input");
+          del.setAttribute("type", "button");
+          del.setAttribute("value", "delete");
+          del.setAttribute("class", "delete");
+          del.addEventListener("click", function () {
+            var confirmNO2 = window.confirm(
+              "Are sure , You want to DELETE your Task ? :-  " +
+                this.parentNode.parentNode.firstChild.innerHTML
+            );
+            if (confirmNO2) {
+              tbl2.removeChild(this.parentNode.parentNode);
+              //console.log(tbl2.innerHTML);
 
-         if(tblnode2 == ""){
-             console.log("111");
-             dltbtn2.style.display = "none";
-             return;
-         }
+              var tblnode2 = tbl2.innerHTML;
+              //console.log(tblnode2);
+
+              if (tblnode2 == "") {
+                //console.log("111");
+
+                dltbtn2.style.display = "none";
+              }
+            }
+          });
+
+          td4 = document.createElement("td");
+          td5 = document.createElement("td");
+
+          td4.appendChild(z);
+          td5.appendChild(del);
+
+          tr2 = document.createElement("tr");
+
+          tr2.appendChild(td4);
+          tr2.appendChild(td5);
+
+          tbl2.appendChild(tr2);
+
+          tbl.removeChild(x.parentNode);
+
+          dltbtn2.style.display = "block";
+        }
       });
 
-      td4 = document.createElement("td");
-      td5 = document.createElement("td");
+      edt.setAttribute("type", "button");
+      edt.setAttribute("value", "Edit");
+      edt.setAttribute("class", "edit");
+      edt.addEventListener("click", function () {
+        if (litm.value == "") {
+          el = this.parentNode.parentNode;
+          if (
+            window.confirm(
+              el.firstChild.nextSibling.innerHTML +
+                "\n Are you sure you want to edit this?"
+            )
+          ) {
+            sbbtn.style.display = "none";
+            btnOK.style.display = "inline";
 
-      td4.appendChild(z);
-      td5.appendChild(del);
+            litm.value = el.firstChild.nextSibling.innerHTML;
+          }
+        } else {
+          window.alert("There is a task that hasn't been entered yet");
+        }
+      });
 
-      tr2 = document.createElement("tr");
+      td1 = document.createElement("td");
+      td2 = document.createElement("td");
+      td3 = document.createElement("td");
 
-      tr2.appendChild(td4);
-      tr2.appendChild(td5);
+      td1.appendChild(chk);
+      td2.appendChild(t1);
+      td3.appendChild(edt);
 
-      tbl2.appendChild(tr2);
+      tr = document.createElement("tr");
 
-      tbl.removeChild(x.parentNode);
+      tr.appendChild(td1);
+      tr.appendChild(td2);
+      tr.appendChild(td3);
 
-      dltbtn2.style.display = "block";
-    });
+      tbl.appendChild(tr);
 
-    edt.setAttribute("type", "button");
-    edt.setAttribute("value", "Edit");
-    edt.addEventListener("click", function () {
-      sbbtn.style.display = "none";
-      btnOK.style.display = "inline";
-      el = this.parentNode.parentNode;
-      litm.value = el.firstChild.innerHTML;
-    });
-
-    td1 = document.createElement("td");
-    td2 = document.createElement("td");
-    td3 = document.createElement("td");
-
-    td1.appendChild(t1);
-    td2.appendChild(chk);
-    td3.appendChild(edt);
-
-    tr = document.createElement("tr");
-
-    tr.appendChild(td1);
-    tr.appendChild(td2);
-    tr.appendChild(td3);
-
-    tbl.appendChild(tr);
-
-    litm.value = "";
+      litm.value = "";
+    } else {
+      window.alert("Please don't add NUMBERS!");
+    }
+  } else {
+    window.alert("Add your Task first!!");
   }
 }
 
-// function dlt(a){
+function editDoneItem() {
+  if (
+    window.confirm(
+      "Are you sure , You want to CHANGHE  your  Task ( " +
+        el.firstChild.nextSibling.innerHTML +
+        " ) to  ( " +
+        litm.value +
+        " ) ! "
+    )
+  ) {
+    el.firstChild.nextSibling.innerHTML = litm.value;
 
-//     //console.log((a.parentNode).parentNode);
+    litm.value = "";
 
-//     tbl.removeChild((a.parentNode).parentNode);
-
-// }
-
-// function edit(b){
-
-//     btnOK.style.display = "inline";
-
-//     //console.log((b.parentNode).parentNode);
-
-//     el = (b.parentNode).parentNode;
-
-//     //console.log(el.firstChild);
-
-//     litm.value = (el.firstChild).innerHTML;
-
-// }
-
-function okbtn() {
-  el.firstChild.innerHTML = litm.value;
-
-  litm.value = "";
-
-  btnOK.style.display = "none";
-  sbbtn.style.display = "inline";
+    btnOK.style.display = "none";
+    sbbtn.style.display = "inline";
+  }
 }
 
-function dltAll() {
-  //console.log("111");
+function dltAllItem() {
+  if (window.confirm("Are you sure you want to delete everything?")) {
+    //console.log("111");
 
-  tbl2.innerHTML = "";
+    tbl2.innerHTML = "";
 
-  dltbtn2.style.display = "none";
+    dltbtn2.style.display = "none";
+  }
 }
