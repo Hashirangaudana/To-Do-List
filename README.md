@@ -10,3 +10,11 @@ The To Do List application is a simple and intuitive tool designed to help users
 - **Edit Tasks**: Modify existing tasks to update details.
 - **Delete Tasks**: Remove tasks that are no longer needed.
 - **Mark as Completed**: Mark tasks as completed to keep track of progress.
+- **Task Filtering**: View all tasks, only completed tasks, or only pending tasks.
+- **Responsive Design**: Use the application on any device, thanks to its responsive layout.
+
+## Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/Hashirangaudana/To-Do-List.git
