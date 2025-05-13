@@ -1,5 +1,6 @@
 var el;
 // TO-Do_list
+// Every Day What We Do
 function sub() {
   //console.log("111");
   var s1;
