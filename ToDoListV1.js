@@ -2,7 +2,7 @@ var el;
 // TO-Do_list
 function sub() {
   //console.log("111");
-  
+  var s1;
   var itm = litm.value;
   //console.log(itm);
 
